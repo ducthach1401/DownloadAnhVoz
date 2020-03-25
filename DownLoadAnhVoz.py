@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import os
 
 
-value={'login':'Username','password':'pass'}
+value={}
+value['login']=input('nhap user:')
+value['password']=input('password:')
 s = requests.Session()
 s.post('https://next.voz.vn/login/login',data=value)
 filetxt=open('link.txt','r')
