@@ -7,7 +7,7 @@ value={}
 value['login']=input('nhap user:')
 value['password']=input('password:')
 s = requests.Session()
-s.post('https://next.voz.vn/login/login',data=value)
+s.post('https://voz.vn/login/login',data=value)
 filetxt=open('link.txt','r')
 tam=filetxt.read()
 tam=tam.split()
@@ -34,7 +34,7 @@ for i in tam:
 		print(br.url)
 		for i in soup.find_all('img'):
 			temp=i.get('src')
-			if ('https://next.voz.vn/' in temp):
+			if ('https://voz.vn/' in temp):
 				response=s.get(temp)
 				soluong=len(os.listdir(link))+1
 				temp1=str(soluong)+'.jpg'
